@@ -18,4 +18,4 @@ jobs:
           upstream_sync_repo: qist/tvbox
           upstream_sync_branch: master
           target_sync_branch: master
-          target_repo_token: ${{ secrets.FORK_SYNC_TOKEN }}
+          target_repo_token: ${{ secrets.GITHUB_TOKEN }}
