@@ -14,11 +14,13 @@ jobs:
     steps:
       - name: Checkout target repo
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Sync fork
         uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.3
         with:
           upstream_sync_repo: qist/tvbox
           upstream_sync_branch: master
-          target_sync_branch: master
-          target_repo_token: ${{ secrets.GITHUB_TOKEN }}
+          target_sync_branch: master   # 根据你的实际分支调整
+          target_repo_token: ${{ secrets.FORK_SYNC_TOKEN }}
